@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #eee;
+}
+
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #868686;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+#addButton {
+  position: fixed;
+  padding: 0 20px;
+  height: 40px;
+  font-size: 0.9em;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 1px black solid;
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  max-width: 150px;
+  width: 100%;
+  background-color: #0ff15a;
+  bottom: 8%;
+  right: 8%;
+}
+
+#removeButton {
+  position: fixed;
+  padding: 0 20px;
+  height: 40px;
+  font-size: 0.9em;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 1px black solid;
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  max-width: 150px;
+  width: 100%;
+  background-color: #f11e0f;
+  bottom: 8%;
+  right: 20%;
+}
+
+#saveButton {
+  position: fixed;
+  padding: 0 20px;
+  height: 40px;
+  font-size: 0.9em;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 1px black solid;
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  max-width: 150px;
+  width: 100%;
+  background-color: #f87800;
+  bottom: 8%;
+  left: 6%;
+}
