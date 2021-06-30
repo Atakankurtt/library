@@ -17,9 +17,36 @@ function addBookToLibrary() {
 }
 
 function display() { // adds books to the table
+  clearTable();
+  firstRow();
+  for (let i = 1; i <= myLibrary.length; i++) {
+    createRow(i);
+  };
+}
+
+function clearTable() {
   while (table.hasChildNodes()) {
     table.removeChild(table.firstChild);
   };
+}
+
+function createRow(i) {
+  let row = table.insertRow(i);
+  let checkbox = document.createElement('input');
+  row.id = myLibrary[i-1].name.replace(/\s+/g, '');
+  let cell1 = row.insertCell(0);
+  let cell2 = row.insertCell(1);
+  let cell3 = row.insertCell(2);
+  let cell4 = row.insertCell(3);
+  cell1.textContent = myLibrary[i-1].name;
+  cell2.textContent = myLibrary[i-1].author;
+  cell3.textContent = myLibrary[i-1].pageAmmount; 
+  checkbox.type = "checkbox";
+  cell4.appendChild(checkbox);
+  if (myLibrary[i-1].readed == true) checkbox.checked = true;
+}
+
+function firstRow() {
   let a = table.insertRow(0);
   let aa = a.insertCell(0);
   let ab = a.insertCell(1);
@@ -29,21 +56,6 @@ function display() { // adds books to the table
   ab.textContent = 'Author';
   ac.textContent = 'Number of Pages';
   ad.textContent = 'Readed';
-  for (let i = 1; i <= myLibrary.length; i++) {
-    let row = table.insertRow(i);
-    row.id = myLibrary[i-1].name.replace(/\s+/g, '');
-    let cell1 = row.insertCell(0);
-    let cell2 = row.insertCell(1);
-    let cell3 = row.insertCell(2);
-    let cell4 = row.insertCell(3);
-    cell1.textContent = myLibrary[i-1].name;
-    cell2.textContent = myLibrary[i-1].author;
-    cell3.textContent = myLibrary[i-1].pageAmmount;
-    let checkbox = document.createElement('input');
-    checkbox.type = "checkbox";
-    cell4.appendChild(checkbox);
-    if (myLibrary[i-1].readed == true) checkbox.checked = true;
-  };
 }
 
 function updateReaded(ele) {
