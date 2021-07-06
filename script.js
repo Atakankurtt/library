@@ -4,11 +4,24 @@ const removeButton = document.getElementById('removeButton');
 const saveButton = document.getElementById('saveButton');
 let myLibrary = [];
 
-function Book(name, author, pageAmmount, readed) {
-  this.name = name;
-  this.author = author;
-  this.pageAmmount = pageAmmount;
-  this.readed = (readed == "yes") ? true : false;
+// function Book(name, author, pages, readed) {
+//   this.name = name;
+//   this.author = author;
+//   this.pages = pages;
+//   this.readed = (readed == "yes") ? true : false;
+// }
+class Book {
+  constructor(
+    name = "Unknown",
+    author = "Unknown",
+    pages = "0",
+    readed = false,
+  ) {
+    this.name = name;
+    this.author = author;
+    this.pages = pages;
+    this.readed = (readed == "yes") ? true : false;
+  }
 }
 
 function addBookToLibrary() {
@@ -40,7 +53,7 @@ function createRow(i) {
   let cell4 = row.insertCell(3);
   cell1.textContent = myLibrary[i-1].name;
   cell2.textContent = myLibrary[i-1].author;
-  cell3.textContent = myLibrary[i-1].pageAmmount; 
+  cell3.textContent = myLibrary[i-1].pages; 
   checkbox.type = "checkbox";
   cell4.appendChild(checkbox);
   if (myLibrary[i-1].readed == true) checkbox.checked = true;
